@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>פורטל הגיל הרך</title>
+<meta name="description" content="מפות לגיל הרך לפי עיר: גני ילדים, מעונות יום, טיפות חלב, גני שעשועים, גינות ומקלטים, ומתי נרשמים.">
+<link rel="canonical" href="https://parentsportal.org.il/">
+<meta property="og:type" content="website"><meta property="og:locale" content="he_IL">
+<meta property="og:title" content="פורטל הגיל הרך"><meta property="og:url" content="https://parentsportal.org.il/">
+<meta property="og:description" content="מפות לגיל הרך לפי עיר: גני ילדים, מעונות יום, טיפות חלב, גני שעשועים, גינות ומקלטים.">
+<meta name="theme-color" content="#2f6f5e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cg%20transform%3D%22rotate%280%2050%2050%29%22%3E%3Cpath%20d%3D%22M54%2046%20L54%2026%20A20%2020%200%200%201%2074%206%20A20%2020%200%200%201%2094%2026%20A20%2020%200%200%201%2074%2046%20Z%22%20fill%3D%22%23e0566b%22/%3E%3Ccircle%20cx%3D%2274%22%20cy%3D%2226%22%20r%3D%226.5%22%20fill%3D%22%23fff%22/%3E%3C/g%3E%3Cg%20transform%3D%22rotate%2890%2050%2050%29%22%3E%3Cpath%20d%3D%22M54%2046%20L54%2026%20A20%2020%200%200%201%2074%206%20A20%2020%200%200%201%2094%2026%20A20%2020%200%200%201%2074%2046%20Z%22%20fill%3D%22%233a86c8%22/%3E%3Ccircle%20cx%3D%2274%22%20cy%3D%2226%22%20r%3D%226.5%22%20fill%3D%22%23fff%22/%3E%3C/g%3E%3Cg%20transform%3D%22rotate%28180%2050%2050%29%22%3E%3Cpath%20d%3D%22M54%2046%20L54%2026%20A20%2020%200%200%201%2074%206%20A20%2020%200%200%201%2094%2026%20A20%2020%200%200%201%2074%2046%20Z%22%20fill%3D%22%23d9a21b%22/%3E%3Ccircle%20cx%3D%2274%22%20cy%3D%2226%22%20r%3D%226.5%22%20fill%3D%22%23fff%22/%3E%3C/g%3E%3Cg%20transform%3D%22rotate%28270%2050%2050%29%22%3E%3Cpath%20d%3D%22M54%2046%20L54%2026%20A20%2020%200%200%201%2074%206%20A20%2020%200%200%201%2094%2026%20A20%2020%200%200%201%2074%2046%20Z%22%20fill%3D%22%233aa05c%22/%3E%3Ccircle%20cx%3D%2274%22%20cy%3D%2226%22%20r%3D%226.5%22%20fill%3D%22%23fff%22/%3E%3C/g%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%223%22%20fill%3D%22%232f6f5e%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f6f4ee;--surface:#fff;--ink:#1d2a24;--muted:#56645c;--line:#dcd8cc;--accent:#2f6f5e}
+:root[data-theme="dark"]{--paper:#0b0b0b;--surface:#161616;--ink:#ececec;--muted:#a8a8a8;--line:#2c2c2c;--accent:#6cc8a3}
+*{box-sizing:border-box}
+body{margin:0;font-family:Rubik,system-ui,sans-serif;background:var(--paper);color:var(--ink);min-height:100vh;display:flex;flex-direction:column;align-items:center}
+.wrap{width:100%;max-width:560px;padding:28px 18px 40px;display:flex;flex-direction:column;align-items:center;gap:14px}
+.top{width:100%;display:flex;justify-content:flex-start}
+.theme{border:2px solid color-mix(in srgb,var(--ink) 35%,transparent);background:var(--surface);color:var(--ink);border-radius:999px;padding:4px 14px;min-height:36px;font:inherit;font-size:.85rem;font-weight:700;cursor:pointer}
+.theme:focus-visible,.city:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.logo{width:92px;height:92px}
+h1{margin:0;font-size:2rem;font-weight:700;text-align:center}
+.lead{margin:0;color:var(--muted);text-align:center;line-height:1.55;font-size:1.02rem}
+h2{margin:14px 0 0;font-size:1.05rem;align-self:flex-start}
+.cities{width:100%;display:flex;flex-direction:column;gap:10px}
+.city{display:flex;flex-direction:column;gap:2px;padding:16px 20px;border-radius:24px;border:2px solid var(--line);background:var(--surface);color:var(--ink);text-decoration:none;min-height:56px}
+.city:hover{border-color:var(--accent)}
+.cn{font-size:1.2rem;font-weight:700}.cd{font-size:.9rem;color:var(--muted)}
+.copy{margin-top:22px;font-size:.85rem;color:var(--muted);text-align:center}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="top"><button type="button" class="theme" id="theme">תצוגה כהה</button></div>
+  <div class="logo" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g transform="rotate(0 50 50)"><path d="M54 46 L54 26 A20 20 0 0 1 74 6 A20 20 0 0 1 94 26 A20 20 0 0 1 74 46 Z" fill="#e0566b"/><circle cx="74" cy="26" r="6.5" fill="#fff"/></g><g transform="rotate(90 50 50)"><path d="M54 46 L54 26 A20 20 0 0 1 74 6 A20 20 0 0 1 94 26 A20 20 0 0 1 74 46 Z" fill="#3a86c8"/><circle cx="74" cy="26" r="6.5" fill="#fff"/></g><g transform="rotate(180 50 50)"><path d="M54 46 L54 26 A20 20 0 0 1 74 6 A20 20 0 0 1 94 26 A20 20 0 0 1 74 46 Z" fill="#d9a21b"/><circle cx="74" cy="26" r="6.5" fill="#fff"/></g><g transform="rotate(270 50 50)"><path d="M54 46 L54 26 A20 20 0 0 1 74 6 A20 20 0 0 1 94 26 A20 20 0 0 1 74 46 Z" fill="#3aa05c"/><circle cx="74" cy="26" r="6.5" fill="#fff"/></g><circle cx="50" cy="50" r="3" fill="#2f6f5e"/></svg></div>
+  <h1>פורטל הגיל הרך</h1>
+  <p class="lead">כל מה שהורים לילדים מלידה עד גיל 4 צריכים, על מפה אחת: גני ילדים, מעונות יום, טיפות חלב, גני שעשועים, גינות ומקלטים. מה הכי קרוב לבית, ומתי נרשמים.</p>
+  <h2>בחרו עיר</h2>
+  <nav class="cities" aria-label="ערים"><a class="city" href="/ramat-gan/"><span class="cn">רמת גן וגבעתיים</span><span class="cd">גנים, מעונות, טיפות חלב, גני שעשועים, גינות ומקלטים</span></a><a class="city" href="/rishon-lezion/"><span class="cn">ראשון לציון</span><span class="cd">גנים, מעונות, טיפות חלב, גני שעשועים, גינות ומקלטים</span></a></nav>
+  <p class="copy">© כל הזכויות שמורות ל־SuperFace שמי אוסטרובסקי 2026</p>
+</main>
+<script>
+(function(){const b=document.getElementById('theme');let t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';try{const s=localStorage.getItem('pp-theme');if(s==='light'||s==='dark')t=s;}catch(e){}
+const ap=()=>{document.documentElement.setAttribute('data-theme',t);b.textContent=t==='dark'?'תצוגה בהירה':'תצוגה כהה';};ap();
+b.onclick=()=>{t=t==='dark'?'light':'dark';try{localStorage.setItem('pp-theme',t);}catch(e){}ap();};
+try{const q=location.search;if(/[?&]notrack=1/.test(q))localStorage.setItem('pp-notrack','1');if(/[?&]notrack=0/.test(q))localStorage.removeItem('pp-notrack');}catch(e){}
+try{if(/(^|\.)parentsportal\.org\.il$/.test(location.hostname)&&navigator.doNotTrack!=='1'&&localStorage.getItem('pp-notrack')!=='1'){
+ let sid;try{sid=sessionStorage.getItem('pp-sid');if(!sid){sid=(Math.random().toString(36).slice(2)+'00000000').slice(0,10);sessionStorage.setItem('pp-sid',sid);}}catch(e){sid=(Math.random().toString(36).slice(2)+'00000000').slice(0,10);}
+ let ref=null;try{const u=new URLSearchParams(location.search).get('utm_source');const h=document.referrer?new URL(document.referrer).hostname:'';ref=u?u.slice(0,60):(h&&h!==location.hostname?h.slice(0,60):null);}catch(e){}
+ fetch('https://wuhmhrwbuchckrugirvo.supabase.co/rest/v1/events',{method:'POST',keepalive:true,headers:{'apikey':'sb_publishable_tL910FnvCbiPD9MVIylx5A_gmX_eg5_','Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify({city:'home',ev:'visit',sid:sid,dev:matchMedia('(max-width:760px)').matches?'m':'d',ref:ref})}).catch(()=>{});
+}}catch(e){}
+})();
+</script>
+</body>
+</html>
