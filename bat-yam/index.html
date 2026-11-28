@@ -408,14 +408,13 @@ h2[tabindex="-1"]:focus{outline:none}
 .wtheme:hover{border-color:var(--accent)}
 #chooser .cstep{padding-left:110px}
 @media (max-width:420px){#chooser .cstep{padding-left:0;padding-top:40px}}
-.wcity{display:inline-flex;align-items:center;margin-inline-start:8px;vertical-align:middle;border:1.5px solid color-mix(in srgb,var(--ink) 35%,transparent);background:var(--surface);color:var(--ink);border-radius:999px;padding:2px 12px;min-height:32px;font:inherit;font-size:.82rem;font-weight:700;cursor:pointer}
-.wcity:hover{border-color:var(--accent)}
-.wcity[aria-expanded="true"]{border-color:var(--accent);color:var(--accent)}
-.wcities{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:2px 0 0}
-.wcities[hidden]{display:none}
-.wcities a{display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;border-radius:999px;border:2px solid var(--line);background:var(--paper);color:var(--ink);text-decoration:none;font-weight:700;font-size:.92rem}
-.wcities a:hover{border-color:var(--accent)}
-.wcity:focus-visible,.wcities a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wmore{margin-top:10px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.wmore[hidden]{display:none}
+.wmoret{margin:0;font-weight:700;font-size:1rem}
+.wmorel{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.wmorel a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 16px;border-radius:999px;border:2px solid var(--line);background:var(--paper);color:var(--ink);text-decoration:none;font-weight:700;font-size:.95rem}
+.wmorel a:hover{border-color:var(--accent)}
+.wmorel a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 </style>
 </head>
 <body>
@@ -424,8 +423,7 @@ h2[tabindex="-1"]:focus{outline:none}
     <button type="button" class="wtheme" data-themetoggle>תצוגה כהה</button>
     <div class="wlogo" aria-hidden="true"><svg viewBox="0 0 100 100" aria-hidden="true"><g transform="rotate(0 50 50)"><path d="M54 46 L54 26 A20 20 0 0 1 74 6 A20 20 0 0 1 94 26 A20 20 0 0 1 74 46 Z" style="fill:var(--c-gan)"/><circle cx="74" cy="26" r="6.5" style="fill:var(--surface)"/></g><g transform="rotate(90 50 50)"><path d="M54 46 L54 26 A20 20 0 0 1 74 6 A20 20 0 0 1 94 26 A20 20 0 0 1 74 46 Z" style="fill:var(--c-tipa)"/><circle cx="74" cy="26" r="6.5" style="fill:var(--surface)"/></g><g transform="rotate(180 50 50)"><path d="M54 46 L54 26 A20 20 0 0 1 74 6 A20 20 0 0 1 94 26 A20 20 0 0 1 74 46 Z" style="fill:var(--c-play)"/><circle cx="74" cy="26" r="6.5" style="fill:var(--surface)"/></g><g transform="rotate(270 50 50)"><path d="M54 46 L54 26 A20 20 0 0 1 74 6 A20 20 0 0 1 94 26 A20 20 0 0 1 74 46 Z" style="fill:var(--c-garden)"/><circle cx="74" cy="26" r="6.5" style="fill:var(--surface)"/></g><circle cx="50" cy="50" r="3" style="fill:var(--accent)"/></svg></div>
     <h2 class="wtitle" id="wtitle">פורטל הגיל הרך</h2>
-    <p class="wsub">בת ים <button type="button" class="wcity" id="wcity" aria-expanded="false" aria-controls="wcities">החלפת עיר</button></p>
-    <nav class="wcities" id="wcities" aria-label="ערים נוספות" hidden></nav>
+    <p class="wsub">בת ים</p>
     <p class="wlead" id="wlead">כל מה שהורים לילדים מלידה עד גיל 4 צריכים, על מפה אחת. הזינו את כתובת הבית, ונראה לכם מה הכי קרוב אליכם.</p>
     <ul class="wfeat" id="wfeat">
       <li><i aria-hidden="true" style="background:var(--c-gan)"></i>גני ילדים עירוניים ומעונות יום</li>
@@ -441,6 +439,10 @@ h2[tabindex="-1"]:focus{outline:none}
     <button class="wgo" id="wgo" type="button">הצגת המקומות הקרובים</button>
     <div class="wsaved" id="wsaved"></div>
     <div class="walt"><button type="button" class="linkbtn" id="wgeo">המיקום שלי</button><button type="button" class="linkbtn" id="wpick">אסמן את הבית על המפה</button><button type="button" class="linkbtn" id="wskip">כניסה בלי כתובת</button><button type="button" class="linkbtn" id="wcancel" hidden>ביטול וחזרה</button></div>
+    <section class="wmore" id="wmore" aria-labelledby="wmoret" hidden>
+      <p class="wmoret" id="wmoret">כנסו לראות מידע בערים נוספות</p>
+      <nav class="wmorel" id="wmorel" aria-labelledby="wmoret"></nav>
+    </section>
   </div>
 </div>
 <div id="chooser" class="welcome" hidden role="dialog" aria-modal="true" aria-labelledby="ctitle">
@@ -1332,13 +1334,13 @@ document.addEventListener('click',e=>{const a=e.target&&e.target.closest?e.targe
 },true);
 document.addEventListener('toggle',e=>{const t=e.target;if(t&&t.classList&&t.classList.contains('regbox')&&t.open)track('reg');},true);
 document.getElementById('homeBtn').addEventListener('click',()=>track('install'));
-/* other cities on the welcome screen: the list comes from /cities.json (one source for all cities) */
-(()=>{const b=document.getElementById('wcity'),n=document.getElementById('wcities');if(!b||!n)return;
-  const fill=l=>{n.textContent='';l.forEach(c=>{if(!c||typeof c.slug!=='string'||!/^[a-z-]+$/.test(c.slug)||c.slug===CFG.slug||!c.name)return;
-    const a=document.createElement('a');a.href='/'+c.slug+'/';a.textContent=String(c.name);a.addEventListener('click',()=>track('city',null,c.slug));n.appendChild(a);});};
-  fetch('/cities.json').then(r=>r.ok?r.json():null).then(l=>{if(Array.isArray(l))fill(l);}).catch(()=>{});
-  b.onclick=()=>{if(!n.children.length){location.href='/';return;}
-    const o=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',String(o));n.hidden=!o;if(o)track('cities');};
+/* other cities at the bottom of the welcome screen: the list comes from /cities.json (one source for all cities) */
+(()=>{const box=document.getElementById('wmore'),nav=document.getElementById('wmorel');if(!box||!nav)return;
+  const add=(href,name,slug)=>{const a=document.createElement('a');a.href=href;a.textContent=name;a.addEventListener('click',()=>track('city',null,slug));nav.appendChild(a);};
+  fetch('/cities.json').then(r=>r.ok?r.json():Promise.reject()).then(l=>{if(!Array.isArray(l))throw 0;
+    l.forEach(c=>{if(c&&typeof c.slug==='string'&&/^[a-z-]+$/.test(c.slug)&&c.slug!==CFG.slug&&c.name)add('/'+c.slug+'/',String(c.name),c.slug);});
+    box.hidden=!nav.children.length;})
+  .catch(()=>{nav.textContent='';add('/','לכל הערים','home');box.hidden=false;});
 })();
 /* my location (works on the hosted site) */
 document.getElementById('wgeo').onclick=()=>{const er=document.getElementById('werr');
