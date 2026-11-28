@@ -5,7 +5,7 @@ Writes <slug>/share.jpg and share.jpg at the root, 1200x630, JPEG, well under 30
 import json, re, os, sys, tempfile, subprocess
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CITIES = [('ramat-gan', 'רמת גן וגבעתיים'), ('rishon-lezion', 'ראשון לציון'), ('holon', 'חולון')]
+CITIES = [('ramat-gan', 'רמת גן וגבעתיים'), ('rishon-lezion', 'ראשון לציון'), ('holon', 'חולון'), ('bat-yam', 'בת ים')]
 COLORS = {'gan': '#d1495b', 'daycare': '#e07a1f', 'tipa': '#2f7fc1', 'play': '#c99400', 'garden': '#2e9e4f',
           'comm': '#7a4fb5', 'shelter': '#3b3f46', 'biz': '#c2417a'}
 LOGO = ''.join(f'<g transform="rotate({r} 50 50)"><path d="M54 46 L54 26 A20 20 0 0 1 74 6 A20 20 0 0 1 94 26 A20 20 0 0 1 74 46 Z" fill="{c}"/><circle cx="74" cy="26" r="6.5" fill="#fff"/></g>'
