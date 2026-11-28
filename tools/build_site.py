@@ -76,7 +76,8 @@ def rep(s, old, new, count=1):
 
 
 def share_meta(img, title, desc, alt):
-    """og:image and Twitter tags. The images are built by tools/make_share_images.py."""
+    """og:image and Twitter tags. The images are built by tools/make_share_images.py.
+    Raise ?v= whenever the image changes, so caches that key on the image URL fetch it again."""
     return (f'<meta property="og:site_name" content="פורטל הגיל הרך">\n'
             f'<meta property="og:image" content="{img}">\n<meta property="og:image:secure_url" content="{img}">\n'
             f'<meta property="og:image:type" content="image/jpeg">\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n'
@@ -111,7 +112,7 @@ def build_city(c):
             f'<meta property="og:type" content="website">\n<meta property="og:locale" content="he_IL">\n'
             f'<meta property="og:title" content="{title}">\n<meta property="og:description" content="{c["desc"]}">\n'
             f'<meta property="og:url" content="{url}">\n'
-            + share_meta(url + 'share.jpg', title, c['desc'], f'פורטל הגיל הרך, {c["name"]}: מפת העיר עם גני ילדים, מעונות יום, טיפות חלב, גני שעשועים, גינות ומקלטים')
+            + share_meta(url + 'share.jpg?v=2', title, c['desc'], f'פורטל הגיל הרך, {c["name"]}: מפת העיר עם גני ילדים, מעונות יום, טיפות חלב, גני שעשועים, גינות ומקלטים')
             + f'<meta name="theme-color" content="#2f6f5e">\n'
             f'<link rel="icon" href="{FAVICON}">')
     s = rep(s, '<meta name="viewport" content="width=device-width, initial-scale=1">', head)
@@ -152,7 +153,7 @@ def landing():
 <meta property="og:type" content="website"><meta property="og:locale" content="he_IL">
 <meta property="og:title" content="פורטל הגיל הרך"><meta property="og:url" content="{SITE}/">
 <meta property="og:description" content="מפות לגיל הרך לפי עיר: גני ילדים, מעונות יום, טיפות חלב, גני שעשועים, גינות ומקלטים.">
-{share_meta(SITE + '/share.jpg', 'פורטל הגיל הרך', 'מפות לגיל הרך לפי עיר: גני ילדים, מעונות יום, טיפות חלב, גני שעשועים, גינות ומקלטים.', 'פורטל הגיל הרך: מפות לגיל הרך לפי עיר')}<meta name="theme-color" content="#2f6f5e">
+{share_meta(SITE + '/share.jpg?v=2', 'פורטל הגיל הרך', 'מפות לגיל הרך לפי עיר: גני ילדים, מעונות יום, טיפות חלב, גני שעשועים, גינות ומקלטים.', 'פורטל הגיל הרך: מפות לגיל הרך לפי עיר')}<meta name="theme-color" content="#2f6f5e">
 <link rel="icon" href="{FAVICON}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
